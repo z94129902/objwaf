@@ -25,14 +25,14 @@ public class Teacher extends Person implements Actionable {
 
     @Override
     public void action() {
-        System.out.println(getName() + "正在批改作业。");
+        System.out.println(getName() + "正在批改作业，" + "正在备课");
         // TODO 新手练习：补充老师的其他行为，比如备课、答疑。
     }
 
     @Override
     public void introduce() {
         // TODO 新手练习：参考 Student 的 introduce()，让老师介绍姓名、年龄、科目。
-        System.out.println("我是老师，姓名：" + getName() + "，授课科目：" + subject);
+        System.out.println("我是老师，姓名：" + getName() +"，我的年龄是" + getAge() + "，授课科目：" + subject);
     }
 
     public String getSubject() {
