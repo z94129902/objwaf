@@ -56,10 +56,26 @@ public class CampusService {
      * 4. 没找到 return null。
      */
     public Person findByName(String name) {
-        return null;
+    	for (Person person : people) {
+            if (person.getName().equals(name)) {
+                return person;
+            }
+        }
+    	return null;
     }
 
     /**
      * TODO 新手练习：可以尝试新增 deleteByName(String name) 方法。
      */
+    public Person deleteByName(String name) {
+    	for (Person person : people) {
+    		if(person.getName().equals(name)) {
+    			people.remove(person);
+    			return person;
+    		}
+    	}
+    	return null;
+    }
 }
+    
+
