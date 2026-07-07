@@ -44,6 +44,9 @@ public class Main {
                 case 8:
                     findPersonByName();
                     break;
+                case 9:
+                	deletePersonByName();
+                	break;
                 case 0:
                     System.out.println("系统已退出");
                     return;
@@ -65,6 +68,7 @@ public class Main {
         System.out.println("6. 查看角色类型");
         System.out.println("7. 使用反射查看类信息");
         System.out.println("8. 按姓名查找人员");
+        System.out.println("9. 按姓名删除人员");
         System.out.println("0. 退出系统");
     }
 
@@ -116,6 +120,17 @@ public class Main {
         } else {
             person.introduce();
         }
+    }
+    
+    private static void deletePersonByName() {
+    	String name = readLine("请输入要查找的姓名：");
+    	Person person = CAMPUS_SERVICE.deleteByName(name);
+    	if (person == null) {
+    		System.out.println("没有找到该人员。");
+    	} else {
+    		System.out.println("已删除：");
+    		person.introduce();
+    	}
     }
 
     private static String readLine(String message) {
