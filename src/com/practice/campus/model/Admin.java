@@ -25,14 +25,14 @@ public class Admin extends Person implements Manageable {
 
     @Override
     public void manage() {
-        System.out.println(getName() + "正在维护校园系统数据。");
+        System.out.println(getName() + "正在维护校园系统数据," + "正在休息。");
         // TODO 新手练习：补充更多管理员行为。
     }
 
     @Override
     public void introduce() {
         // TODO 新手练习：让管理员介绍姓名、年龄、管理部门。
-        System.out.println("我是管理员，姓名：" + getName() + "，管理部门：" + department);
+        System.out.println("我是管理员，姓名：" + getName() + "，我的年龄是" + getAge() + "，管理部门：" + department);
     }
 
     public String getDepartment() {
