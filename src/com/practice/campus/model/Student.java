@@ -20,7 +20,7 @@ public class Student extends Person implements Actionable {
 
     @Override
     public void doWork() {
-        System.out.println(getName() + "正在学习 Java 面向对象。");
+        System.out.println(getName() + "正在学习 Java 面向对象。" + studentNo);
         // TODO 新手练习：把输出内容改得更丰富，比如加上学号 studentNo。
     }
 
@@ -32,7 +32,7 @@ public class Student extends Person implements Actionable {
 
     @Override
     public void introduce() {
-        System.out.println("我是学生，姓名：" + getName() + "，年龄：" + getAge() + "，学号：" + studentNo);
+    	System.out.println("我是学生，姓名：" + getName() + "，年龄：" + getAge() + "，学号：" + studentNo + "，角色描述：" + getRoleType().getDescription());
         // TODO 新手练习：仿照 Teacher / Admin，补充更多自我介绍信息。
     }
 
