@@ -29,8 +29,21 @@ public class ReflectionUtil {
                 System.out.println("暂无方法");
             }
             for (Method method : methods) {
-                System.out.println(method.getName());
+                System.out.println("方法名字是"+ method.getName());
+                System.out.println("方法的返回值类型是" + method.getReturnType().getSimpleName());
+                System.out.println("方法的参数类型：");
+            	Class<?>[] parameterTypes = method.getParameterTypes();
+
+                if (parameterTypes.length == 0) {
+                    System.out.println("无");
+                } else {
+                    for (Class<?> parameterType : parameterTypes) {
+                        System.out.print(parameterType.getSimpleName() + " ");
+                    }
+                    System.out.println();
+                }
             }
+            
 
             System.out.println("--- 构造方法 ---");
             Constructor<?>[] constructors = clazz.getDeclaredConstructors();
